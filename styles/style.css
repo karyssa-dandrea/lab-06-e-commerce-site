@@ -1,6 +1,7 @@
 
 img {
     width: 400px;
+    padding: 15px;
 }
 
 h1 {
@@ -23,4 +24,22 @@ h2 {
 color: #023047;
 font-family: 'Girassol', cursive;
 font-size: 2rem;
+}
+
+h3 {
+    font-family: 'Nova Oval', cursive;
+    color: #126782;
+}
+
+p {
+    font-family: 'Nova Cut', cursive;
+    color: #15616D;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+h4 {
+    font-family: 'Nova Script', cursive;
+    color: #001524;
+    font-size: 1.3rem;
 }
