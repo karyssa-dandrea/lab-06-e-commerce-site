@@ -1,8 +1,10 @@
 // import functions and grab DOM elements
+import { renderCrystals } from './render-crystals.js';
+import { crystals } from './crystals.js';
 
-// initialize global state
+const crystalList = document.getElementById('crystal-list');
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+for (let crystal of crystals){
+  const crystalCard = renderCrystals(crystal);
+  crystalList.append(crystalCard);
+}
