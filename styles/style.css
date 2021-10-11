@@ -1,15 +1,26 @@
 
 img {
     width: 400px;
-    border: 2px; color:
 }
 
 h1 {
     font-family: 'UnifrakturCook', cursive;
     font-size: 3rem;
     text-align: center;
+    color: #1B4965;
+    font-weight: bold;
+    margin: auto;
+    padding: 20px;
 }
 
 body {
     background-image: url('../assets/sparkles.gif');
+    display: flex;
+    flex-direction: row;
+}
+
+h2 {
+color: #023047;
+font-family: 'Girassol', cursive;
+font-size: 2rem;
 }
