@@ -1,12 +1,12 @@
 import { crystals } from '../crystals.js';
 import { cart } from '../data/cart.js';
-import { findById } from '../utils.js';
+import { calculateOrderTotal, findById, toUSD } from '../utils.js';
 
 const tbody = document.getElementById('table-body');
-const tr = document.createElement('tr');
 
 for (let cartItem of cart){
     const crystalsData = findById(cartItem.id, crystals);
+    const tr = document.createElement('tr');
     const tdName = document.createElement('td');
     tdName.textContent = crystalsData.name;
     const tdPrice = document.createElement('td');
@@ -15,6 +15,9 @@ for (let cartItem of cart){
     tdQty.textContent = cartItem.qty;
     const tdTotal = document.createElement('td');
     tdTotal.textContent = cartItem.qty * crystalsData.price;
+    const orderTotal = calculateOrderTotal(cart, crystals);
+    const tdOrderTotal = document.getElementById('total');
+    tdOrderTotal.textContent = toUSD(orderTotal);
 
     tr.append(tdName, tdPrice, tdQty, tdTotal);
     tbody.appendChild(tr);
