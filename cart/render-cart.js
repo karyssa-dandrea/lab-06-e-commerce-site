@@ -1,5 +1,5 @@
 import { crystals } from '../crystals.js';
-import { cart } from './cart.js';
+import { cart } from '../data/cart.js';
 import { findById } from '../utils.js';
 
 const tbody = document.getElementById('table-body');
@@ -17,6 +17,5 @@ for (let cartItem of cart){
     tdTotal.textContent = cartItem.qty * crystalsData.price;
 
     tr.append(tdName, tdPrice, tdQty, tdTotal);
-    tbody.appendChild('tr');
-
+    tbody.appendChild(tr);
 }
