@@ -5,6 +5,6 @@ import { crystals } from './crystals.js';
 const crystalList = document.getElementById('crystal-list');
 
 for (let crystal of crystals){
-  const crystalCard = renderCrystals(crystal);
-  crystalList.append(crystalCard);
+    const crystalCard = renderCrystals(crystal);
+    crystalList.append(crystalCard);
 }
