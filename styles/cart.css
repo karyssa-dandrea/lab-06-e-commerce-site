@@ -1,0 +1,23 @@
+h1 {
+    font-family: 'UnifrakturCook', cursive;
+    font-size: 3rem;
+    text-align: center;
+    color: #1B4965;
+    font-weight: bold;
+    margin: auto;
+}
+
+table {
+    border: 2px solid #023047;
+    border-collapse: collapse;
+     margin: 10px;
+}
+
+thead {
+    background-color: #0b8eab;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: right;
+}
