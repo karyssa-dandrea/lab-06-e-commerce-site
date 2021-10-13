@@ -22,3 +22,9 @@ for (let cartItem of cart){
     tr.append(tdName, tdPrice, tdQty, tdTotal);
     tbody.appendChild(tr);
 }
+
+const orderButton = document.getElementById('order-button');
+orderButton.addEventListener('click', ()=>{
+    localStorage.removeItem('CART');
+    window.location.replace('..');
+}); 
