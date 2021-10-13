@@ -1,18 +1,17 @@
-// IMPORT MODULES under test here:
-// import { example } from '../example.js';
+import { crystals } from '../crystals.js';
+import { findById } from '../utils.js';
 
 const test = QUnit.test;
 
-test('time to test a function', (expect) => {
-    //Arrange
-    // Set up your arguments and expectations
-    const expected = true;
-    
-    //Act 
-    // Call the function you're testing and set the result to a const
-    const actual = true;
-
-    //Expect
-    // Make assertions about what is expected versus the actual result
-    expect.equal(actual, expected);
+test('findById should return the item matching the ID', (expect) => {
+    const expected = {
+        id: '4',
+        name: 'Lapis',
+        img: './assets/lapis.jpeg',
+        price: 45.00,
+        category: 'healing',
+        description: 'Used to encourage self - awareness, self - confidence, self - knowledge, peace and harmony.'
+    };
+    const actual = findById('4', crystals);
+    expect.deepEqual(actual, expected);
 });
