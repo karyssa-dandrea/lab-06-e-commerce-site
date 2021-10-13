@@ -1,4 +1,4 @@
-import { crystals } from './crystals.js';
+
 
 export function renderCrystals(crystal){
     const crystalCard = document.createElement('div');
@@ -21,8 +21,9 @@ export function renderCrystals(crystal){
 
     const addButton = document.createElement('button');
     addButton.textContent = 'Buy';
-    addButton.id = crystals.id;
+    addButton.id = crystal.id;
     addButton.classList.add('add-button');
+    
 
     crystalCard.append(crystalHeader, img, crystalPrice, crystalCategory, crystalDescription, addButton);
     return crystalCard;

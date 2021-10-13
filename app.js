@@ -10,10 +10,9 @@ for (let crystal of crystals){
     crystalList.append(crystalCard);
 }
 
-const addButtons = document.querySelectorAll('.addButton');
+const addButtons = document.querySelectorAll('.add-button');
 for (let addBtn of addButtons){
     addBtn.addEventListener('click', ()=>{
         addItem(addBtn.id);
-        alert('Added item to cart');
     });
 }
