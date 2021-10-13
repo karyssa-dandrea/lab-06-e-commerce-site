@@ -32,7 +32,7 @@ test('getCart should return the cart if it exisits', (expect) => {
 test('getCart should return an empty array if the cart does not exist', (expect)=>{
     // arrange
     // nothing to arrange bc nothing in localStorage
-
+    localStorage.removeItem('CART');
     // act 
     const cart = getCart();
 
