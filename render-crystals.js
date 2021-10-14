@@ -1,3 +1,5 @@
+
+
 export function renderCrystals(crystal){
     const crystalCard = document.createElement('div');
     crystalCard.classList.add('crystal-card');
@@ -17,6 +19,12 @@ export function renderCrystals(crystal){
     const img = document.createElement('img');
     img.src = crystal.img;
 
-    crystalCard.append(crystalHeader, img, crystalPrice, crystalCategory, crystalDescription);
+    const addButton = document.createElement('button');
+    addButton.textContent = 'Buy';
+    addButton.id = crystal.id;
+    addButton.classList.add('add-button');
+    
+
+    crystalCard.append(crystalHeader, img, crystalPrice, crystalCategory, crystalDescription, addButton);
     return crystalCard;
 }
