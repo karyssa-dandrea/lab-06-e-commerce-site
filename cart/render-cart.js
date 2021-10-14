@@ -1,9 +1,9 @@
 import { crystals } from '../crystals.js';
-import { cart } from '../data/cart.js';
-import { calculateOrderTotal, findById, toUSD } from '../utils.js';
+//import { cart } from '../data/cart.js';
+import { calculateOrderTotal, findById, toUSD, getCart, clearCart } from '../utils.js';
 
 const tbody = document.getElementById('table-body');
-
+const cart = getCart();
 for (let cartItem of cart){
     const crystalsData = findById(cartItem.id, crystals);
     const tr = document.createElement('tr');
@@ -28,3 +28,10 @@ orderButton.addEventListener('click', ()=>{
     localStorage.removeItem('CART');
     window.location.replace('..');
 }); 
+
+const placeOrderButton = document.getElementById('order-button');
+
+placeOrderButton.addEventListener('click', ()=> {
+    clearCart();
+    window.location.replace('..');
+});

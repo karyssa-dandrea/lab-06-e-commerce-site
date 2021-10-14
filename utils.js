@@ -27,7 +27,6 @@ export function getCart(){
 
 export function addItem(id){
     const cart = getCart();
-    console.log(cart);
     const cartItem = findById(id, cart);
     if (cartItem){
         cartItem.qty++;
@@ -37,4 +36,8 @@ export function addItem(id){
     }
     const stringCart = JSON.stringify(cart);
     localStorage.setItem('CART', stringCart);
+}
+
+export function clearCart(){
+    localStorage.removeItem('CART'); 
 }
