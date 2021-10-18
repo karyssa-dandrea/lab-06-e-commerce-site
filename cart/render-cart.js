@@ -1,9 +1,11 @@
-import { crystals } from '../crystals.js';
+//import { crystals } from '../crystals.js';
 //import { cart } from '../data/cart.js';
 import { calculateOrderTotal, findById, toUSD, getCart, clearCart } from '../utils.js';
-
+import { getProducts } from '../utils.js';
 const tbody = document.getElementById('table-body');
 const cart = getCart();
+const crystals = getProducts();
+
 for (let cartItem of cart){
     const crystalsData = findById(cartItem.id, crystals);
     const tr = document.createElement('tr');
