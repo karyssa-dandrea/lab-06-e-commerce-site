@@ -54,3 +54,10 @@ export function getProducts(){
     return products || crystals;
 
 }
+
+export function addProduct(newCrystal){
+    let products = getProducts();
+    products.push(newCrystal);
+    let productsString = JSON.stringify(products);
+    localStorage.setItem('PRODUCTS', productsString);
+}
