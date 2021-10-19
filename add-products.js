@@ -14,4 +14,5 @@ form.addEventListener('submit', (e)=>{
     };
     addProduct(newCrystal);
     alert('new crystal added!');
+    form.reset();
 });
