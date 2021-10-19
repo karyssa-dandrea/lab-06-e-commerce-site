@@ -1,3 +1,5 @@
+import { crystals } from './crystals.js';
+
 export function findById(id, items){
     for (let item of items){
         if (item.id === id){
@@ -40,4 +42,22 @@ export function addItem(id){
 
 export function clearCart(){
     localStorage.removeItem('CART'); 
+}
+
+export function getProducts(){
+    const productsString = localStorage.getItem('PRODUCTS');
+    const products = JSON.parse(productsString);
+    if (!products){
+        const crystalsString = JSON.stringify(crystals); 
+        localStorage.setItem('PRODUCTS', crystalsString); 
+    }
+    return products || crystals;
+
+}
+
+export function addProduct(newCrystal){
+    let products = getProducts();
+    products.push(newCrystal);
+    let productsString = JSON.stringify(products);
+    localStorage.setItem('PRODUCTS', productsString);
 }

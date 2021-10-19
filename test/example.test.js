@@ -1,7 +1,7 @@
 import { crystals } from '../crystals.js';
 import { findById } from '../utils.js';
 import { getCart } from '../utils.js';
-import { addItem } from '../utils.js';
+import { addItem, getProducts, addProduct } from '../utils.js';
 
 const test = QUnit.test;
 
@@ -71,4 +71,24 @@ test('addItem should add an item if its not already there', (expect) =>{
 
     expect.deepEqual(cart, expected);
 
+});
+
+test('addProduct should add a product to the products array', (expect)=>{
+    // arrange
+    let products = getProducts();
+    const newProduct = {
+        id: '6',
+        name: 'Amethyst',
+        img: './amethyst.jpeg',
+        category: 'protective',
+        price: 45.00,
+        description: 'helps to relieve stress and anxiety in your life'
+    };
+
+    // act
+    addProduct(newProduct);
+
+    // assert
+    products = getProducts();
+    expect.equal(products.length, 6);
 });
